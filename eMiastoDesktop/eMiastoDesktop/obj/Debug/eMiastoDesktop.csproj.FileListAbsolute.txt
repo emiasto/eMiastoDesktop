@@ -1,0 +1,11 @@
+C:\Users\Marcin\Documents\GitHub\eMiastoDesktop\eMiastoDesktop\eMiastoDesktop\bin\Debug\eMiastoDesktop.exe.config
+C:\Users\Marcin\Documents\GitHub\eMiastoDesktop\eMiastoDesktop\eMiastoDesktop\obj\Debug\eMiastoDesktop.csprojResolveAssemblyReference.cache
+C:\Users\Marcin\Documents\GitHub\eMiastoDesktop\eMiastoDesktop\eMiastoDesktop\obj\Debug\eMiastoDesktop.Form1.resources
+C:\Users\Marcin\Documents\GitHub\eMiastoDesktop\eMiastoDesktop\eMiastoDesktop\obj\Debug\eMiastoDesktop.Properties.Resources.resources
+C:\Users\Marcin\Documents\GitHub\eMiastoDesktop\eMiastoDesktop\eMiastoDesktop\obj\Debug\eMiastoDesktop.csproj.GenerateResource.Cache
+C:\Users\Marcin\Documents\GitHub\eMiastoDesktop\eMiastoDesktop\eMiastoDesktop\bin\Debug\eMiastoDesktop.exe
+C:\Users\Marcin\Documents\GitHub\eMiastoDesktop\eMiastoDesktop\eMiastoDesktop\bin\Debug\eMiastoDesktop.pdb
+C:\Users\Marcin\Documents\GitHub\eMiastoDesktop\eMiastoDesktop\eMiastoDesktop\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Marcin\Documents\GitHub\eMiastoDesktop\eMiastoDesktop\eMiastoDesktop\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Marcin\Documents\GitHub\eMiastoDesktop\eMiastoDesktop\eMiastoDesktop\obj\Debug\eMiastoDesktop.exe
+C:\Users\Marcin\Documents\GitHub\eMiastoDesktop\eMiastoDesktop\eMiastoDesktop\obj\Debug\eMiastoDesktop.pdb
