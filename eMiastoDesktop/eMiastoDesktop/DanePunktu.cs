@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace eMiastoDesktop {
 	class DanePunktu {
+		int id;
 		[JsonProperty("id")]
-		public int id {
+		public int Id {
 			get { return this.id; }
 			set { this.id = value; }
 		}
@@ -27,16 +28,16 @@ namespace eMiastoDesktop {
 			set { this.description = value; }
 		}
 
-		string latitude;
+		double latitude;
 		[JsonProperty("latitude")]
-		public string Latitude {
+		public double Latitude {
 			get { return this.latitude; }
 			set { this.latitude = value; }
 		}
 
-		string longitude;
+		double longitude;
 		[JsonProperty("latitude")]
-		public string Longitude {
+		public double Longitude {
 			get { return this.longitude; }
 			set { this.longitude = value; }
 		}
