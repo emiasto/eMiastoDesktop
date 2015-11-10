@@ -42,9 +42,9 @@ namespace eMiastoDesktop {
 			set { this.longitude = value; }
 		}
 
-		string altitude;
+		double altitude;
 		[JsonProperty("altitude")]
-		public string Altitude {
+		public double Altitude {
 			get { return this.altitude; }
 			set { this.altitude = value; }
 		}

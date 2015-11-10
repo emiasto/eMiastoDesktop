@@ -15,6 +15,7 @@ using CefSharp.WinForms.Internals;
 
 namespace eMiastoDesktop {
 	public partial class SimpleBrowserForm : Form {
+		public string defaulturl = "http://www.maps.google.com";
 		public ChromiumWebBrowser browser;
 
 		public SimpleBrowserForm() {
@@ -39,7 +40,7 @@ namespace eMiastoDesktop {
 		}
 
 		private void CreateBrowser() {
-			browser = new ChromiumWebBrowser("www.maps.google.com") {
+			browser = new ChromiumWebBrowser(defaulturl) {
 				Dock = DockStyle.Fill,
 			};
 			toolStripContainer.ContentPanel.Controls.Add(browser);
