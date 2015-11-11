@@ -14,9 +14,10 @@ using System.Windows.Forms;
 
 namespace eMiastoDesktop {
 	public partial class ListaPunktow : Form {
-		private KolekcjaPunktow lista = new KolekcjaPunktow();
+		private KolekcjaPunktow lista;
 		public ListaPunktow() {
 			InitializeComponent();
+			lista = new KolekcjaPunktow();
 			gridLista.DataSource = lista.ListaPunktow;
 		}
 		

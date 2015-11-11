@@ -99,9 +99,6 @@
 			this.Text = "Lista punktów";
 			((System.ComponentModel.ISupportInitialize)(this.gridLista)).EndInit();
 			this.ResumeLayout(false);
-            this.gridLista = new System.Windows.Forms.DataGridView();
-            this.btnDodaj = new System.Windows.Forms.Button();
-            this.btnPrzelicz = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridLista)).BeginInit();
             this.SuspendLayout();
             // 
