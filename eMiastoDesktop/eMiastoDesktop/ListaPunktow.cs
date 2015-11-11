@@ -14,17 +14,16 @@ using System.Windows.Forms;
 
 namespace eMiastoDesktop {
 	public partial class ListaPunktow : Form {
-		private BindingList<DanePunktu> lista;
+		private KolekcjaPunktow lista = new KolekcjaPunktow();
 		public ListaPunktow() {
 			InitializeComponent();
-			lista = new BindingList<DanePunktu>();
-			gridLista.DataSource = lista;
+			gridLista.DataSource = lista.ListaPunktow;
 		}
 		
 		private void btnDodaj_Click(object sender, EventArgs e) {
 			using (SimpleBrowserForm nowa = new SimpleBrowserForm()) {
-				if (lista.Count > 0) {
-					nowa.defaulturl = "http://www.maps.google.com?q="+lista.Last().Latitude.ToString().Replace(',','.')+" "+lista.Last().Longitude.ToString().Replace(',','.');
+				if (lista.ListaPunktow.Count > 0) {
+					nowa.defaulturl = "http://www.maps.google.com?q=" + lista.ListaPunktow.Last().Latitude.ToString().Replace(',', '.') + " " + lista.ListaPunktow.Last().Longitude.ToString().Replace(',', '.');
 				}
 				nowa.ShowDialog();
 				var wyciety = nowa.browser.Address.Substring(nowa.browser.Address.IndexOf("/@"), (nowa.browser.Address.IndexOf('z', nowa.browser.Address.IndexOf("/@")) - nowa.browser.Address.IndexOf("/@"))).Substring(2);
@@ -43,11 +42,11 @@ namespace eMiastoDesktop {
 														select
 														(string) f["elevation"]
 									  ).SingleOrDefault().Replace('.', ','));
-					var id = lista.Count + 1;
-					if (lista.Any(x => x.Longitude == longitude && x.Latitude == latitude)) {
+					var id = lista.ListaPunktow.Count + 1;
+					if (lista.ListaPunktow.Any(x => x.Longitude == longitude && x.Latitude == latitude)) {
 						MessageBox.Show("Taki punkt już istnieje na liście. Proszę dodać inny", "Ostrzeżenie", MessageBoxButtons.OK);
 					} else {
-						lista.Add(new DanePunktu() {
+						lista.ListaPunktow.Add(new DanePunktu() {
 							Id = id,
 							Altitude = altitude,
 							Latitude = latitude,
@@ -59,7 +58,7 @@ namespace eMiastoDesktop {
 		}
 
 		private void btnPrzelicz_Click(object sender, EventArgs e) {
-			lista.ToList().ForEach(item => {
+			lista.ListaPunktow.ToList().ForEach(item => {
 				if (item.Altitude == 0) {
 					var request = (HttpWebRequest) WebRequest.Create(string.Format("https://maps.googleapis.com/maps/api/elevation/json?locations={0},{1}", item.Latitude.ToString().Replace(",", "."), item.Longitude.ToString().Replace(",", ".")));
 					var response = (HttpWebResponse) request.GetResponse();
@@ -73,6 +72,27 @@ namespace eMiastoDesktop {
 					item.Altitude = altitude;
 				}
 			});
+		}
+
+		private void btnZapisz_Click(object sender, EventArgs e) {
+			var obiekt = Newtonsoft.Json.JsonConvert.SerializeObject(lista);
+			// set filters - this can be done in properties as well
+			sfd.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+			if (sfd.ShowDialog() == DialogResult.OK) {
+				System.IO.File.WriteAllText(sfd.FileName, obiekt);
+			}
+		}
+
+		private void btnOtworz_Click(object sender, EventArgs e) {
+			ofd.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+
+			if (ofd.ShowDialog() == DialogResult.OK) {
+				var obiekt = System.IO.File.ReadAllText(ofd.FileName);
+				lista = Newtonsoft.Json.JsonConvert.DeserializeObject<KolekcjaPunktow>(obiekt);
+				gridLista.DataSource = lista.ListaPunktow;
+			}
+			
 		}
 	}
 }

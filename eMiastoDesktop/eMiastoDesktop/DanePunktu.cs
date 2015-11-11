@@ -1,12 +1,13 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace eMiastoDesktop {
-	class DanePunktu {
+	class DanePunktu : INotifyPropertyChanged {
 		int id;
 		[JsonProperty("id")]
 		public int Id {
@@ -36,7 +37,7 @@ namespace eMiastoDesktop {
 		}
 
 		double longitude;
-		[JsonProperty("latitude")]
+		[JsonProperty("longitude")]
 		public double Longitude {
 			get { return this.longitude; }
 			set { this.longitude = value; }
@@ -49,5 +50,22 @@ namespace eMiastoDesktop {
 			set { this.altitude = value; }
 		}
 
+
+		public event PropertyChangedEventHandler PropertyChanged;
+
+		private void NotifyPropertyChanged(string p) {
+			if (PropertyChanged != null)
+				PropertyChanged(this, new PropertyChangedEventArgs(p));
+		}
+
+	}
+
+	class KolekcjaPunktow {
+		[JsonProperty("ListaPunktow")]
+		public BindingList<DanePunktu> ListaPunktow { get; set; }
+
+		public KolekcjaPunktow() {
+			this.ListaPunktow = new BindingList<DanePunktu>();
+		}
 	}
 }

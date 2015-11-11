@@ -26,6 +26,10 @@
 			this.gridLista = new System.Windows.Forms.DataGridView();
 			this.btnDodaj = new System.Windows.Forms.Button();
 			this.btnPrzelicz = new System.Windows.Forms.Button();
+			this.btnZapisz = new System.Windows.Forms.Button();
+			this.sfd = new System.Windows.Forms.SaveFileDialog();
+			this.btnOtworz = new System.Windows.Forms.Button();
+			this.ofd = new System.Windows.Forms.OpenFileDialog();
 			((System.ComponentModel.ISupportInitialize)(this.gridLista)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -57,11 +61,37 @@
 			this.btnPrzelicz.UseVisualStyleBackColor = true;
 			this.btnPrzelicz.Click += new System.EventHandler(this.btnPrzelicz_Click);
 			// 
+			// btnZapisz
+			// 
+			this.btnZapisz.Location = new System.Drawing.Point(208, 397);
+			this.btnZapisz.Name = "btnZapisz";
+			this.btnZapisz.Size = new System.Drawing.Size(88, 23);
+			this.btnZapisz.TabIndex = 3;
+			this.btnZapisz.Text = "Zapisz";
+			this.btnZapisz.UseVisualStyleBackColor = true;
+			this.btnZapisz.Click += new System.EventHandler(this.btnZapisz_Click);
+			// 
+			// btnOtworz
+			// 
+			this.btnOtworz.Location = new System.Drawing.Point(302, 397);
+			this.btnOtworz.Name = "btnOtworz";
+			this.btnOtworz.Size = new System.Drawing.Size(88, 23);
+			this.btnOtworz.TabIndex = 4;
+			this.btnOtworz.Text = "Otwórz";
+			this.btnOtworz.UseVisualStyleBackColor = true;
+			this.btnOtworz.Click += new System.EventHandler(this.btnOtworz_Click);
+			// 
+			// ofd
+			// 
+			this.ofd.FileName = "openFileDialog1";
+			// 
 			// ListaPunktow
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(743, 430);
+			this.Controls.Add(this.btnOtworz);
+			this.Controls.Add(this.btnZapisz);
 			this.Controls.Add(this.btnPrzelicz);
 			this.Controls.Add(this.btnDodaj);
 			this.Controls.Add(this.gridLista);
@@ -77,5 +107,9 @@
 		private System.Windows.Forms.DataGridView gridLista;
 		private System.Windows.Forms.Button btnDodaj;
 		private System.Windows.Forms.Button btnPrzelicz;
+		private System.Windows.Forms.Button btnZapisz;
+		private System.Windows.Forms.SaveFileDialog sfd;
+		private System.Windows.Forms.Button btnOtworz;
+		private System.Windows.Forms.OpenFileDialog ofd;
 	}
 }
