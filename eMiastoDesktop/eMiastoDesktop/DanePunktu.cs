@@ -23,6 +23,7 @@ namespace eMiastoDesktop {
 		}
 
 		string description;
+		[Browsable(false)]
 		[JsonProperty("description")]
 		public string Description {
 			get { return this.description; }
