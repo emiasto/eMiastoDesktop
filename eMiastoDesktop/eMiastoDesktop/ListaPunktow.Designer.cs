@@ -23,6 +23,7 @@
 		/// the contents of this method with the code editor.
 		/// </summary>
 		private void InitializeComponent() {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ListaPunktow));
 			this.gridLista = new System.Windows.Forms.DataGridView();
 			this.btnDodaj = new System.Windows.Forms.Button();
 			this.btnPrzelicz = new System.Windows.Forms.Button();
@@ -35,6 +36,9 @@
 			// 
 			// gridLista
 			// 
+			this.gridLista.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.gridLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.gridLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.gridLista.Location = new System.Drawing.Point(12, 12);
@@ -44,6 +48,7 @@
 			// 
 			// btnDodaj
 			// 
+			this.btnDodaj.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.btnDodaj.Location = new System.Drawing.Point(12, 397);
 			this.btnDodaj.Name = "btnDodaj";
 			this.btnDodaj.Size = new System.Drawing.Size(75, 23);
@@ -54,6 +59,7 @@
 			// 
 			// btnPrzelicz
 			// 
+			this.btnPrzelicz.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.btnPrzelicz.Location = new System.Drawing.Point(93, 397);
 			this.btnPrzelicz.Name = "btnPrzelicz";
 			this.btnPrzelicz.Size = new System.Drawing.Size(109, 23);
@@ -64,6 +70,7 @@
 			// 
 			// btnZapisz
 			// 
+			this.btnZapisz.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.btnZapisz.Location = new System.Drawing.Point(208, 397);
 			this.btnZapisz.Name = "btnZapisz";
 			this.btnZapisz.Size = new System.Drawing.Size(88, 23);
@@ -74,6 +81,7 @@
 			// 
 			// btnOtworz
 			// 
+			this.btnOtworz.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.btnOtworz.Location = new System.Drawing.Point(302, 397);
 			this.btnOtworz.Name = "btnOtworz";
 			this.btnOtworz.Size = new System.Drawing.Size(88, 23);
@@ -96,25 +104,11 @@
 			this.Controls.Add(this.btnPrzelicz);
 			this.Controls.Add(this.btnDodaj);
 			this.Controls.Add(this.gridLista);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "ListaPunktow";
-			this.Text = "Lista punktów";
+			this.Text = "eMiasto - Lista punktów";
 			((System.ComponentModel.ISupportInitialize)(this.gridLista)).EndInit();
 			this.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridLista)).BeginInit();
-            this.SuspendLayout();
-            // 
-            // ListaPunktow
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(743, 430);
-            this.Controls.Add(this.btnPrzelicz);
-            this.Controls.Add(this.btnDodaj);
-            this.Controls.Add(this.gridLista);
-            this.Name = "ListaPunktow";
-            this.Text = "Lista punktów";
-            ((System.ComponentModel.ISupportInitialize)(this.gridLista)).EndInit();
-            this.ResumeLayout(false);
 
 		}
 
